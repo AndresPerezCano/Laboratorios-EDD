@@ -1,4 +1,3 @@
-#daniel_zapata.005
 indice = int(input("Ingrese un numero entero: "))
 
 listaNumeros = []
