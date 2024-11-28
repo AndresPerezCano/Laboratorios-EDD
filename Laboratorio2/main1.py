@@ -33,5 +33,7 @@ if __name__ == "__main__":
     usuario.getDir().setNomenclatura(nomenclatura)
     usuario.getDir().setBarrio(barrio)
     usuario.getDir().setCiudad(ciudad)
-
+    
+    print("__________________________________________________________________________________________________________________________")
     print(usuario)
+    
