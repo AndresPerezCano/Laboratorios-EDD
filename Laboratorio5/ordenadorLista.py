@@ -29,13 +29,14 @@ class Ordenador_Lista:
         segundo.setDato(temporal)
         
     def mostrar(self):
-        cabeza = self._lista.primero()
+        nodo = self._lista.primero()
         indice = self._lista.tamaño()
+        print("[",end=" ")
         while indice > 0:
-            print(cabeza.getDato(),end=" ")
-            cabeza = cabeza.getSiguiente()
+            print(nodo.getDato(),end=" ")
+            nodo = nodo.getSiguiente()
             indice -= 1
-        print("")
+        print("]")
 
 if __name__ == "__main__":
     ordenador = Ordenador_Lista()
