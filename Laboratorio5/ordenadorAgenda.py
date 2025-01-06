@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
     archivo.close()
     
-    #ordenador.mostrar()
+    ordenador.mostrar()
 
     ordenador.ordenar()
     
