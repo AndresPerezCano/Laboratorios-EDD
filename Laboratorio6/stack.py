@@ -22,11 +22,11 @@ class Stack:
 if __name__ == "__main__":
 
     pila = Stack()
-    pila.push(10)
-    pila.push(8)
-    pila.push(6)
-    pila.push(4)
     pila.push(2)
+    pila.push(4)
+    pila.push(6)
+    pila.push(8)
+    pila.push(10)
     
     i = pila.size()
     while i > 0:

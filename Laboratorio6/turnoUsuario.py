@@ -34,7 +34,6 @@ class TurnoUsuario:
         archivo2.close()
 
 if __name__ == "__main__":
-
     turnoUsuario = TurnoUsuario()
     usuario1 = Usuario("Alberto-Guzman","1252535343",Fecha(1,3,2000),"Envigado",3454434,"aguzman@unal.edu.co",Direccion("kr74","Medellin","4T-35","Boston"))
     usuario2 = Usuario("Marta-Gonzales","3345345535",Fecha(31,12,1985),"Medellin",2536378,"mgonzales@unal.edu.co",Direccion("cll65","Medellin","3-29","Robledo","Balcones-de-la-Quinta","405"))
@@ -46,7 +45,6 @@ if __name__ == "__main__":
     turnoUsuario._registro.enqueue(usuario3)
     turnoUsuario._registro.enqueue(usuario4)
     turnoUsuario._registro.enqueue(usuario5)
-    #turnoUsuario.toFile()
     turnoUsuario.atenderSiguiente()
     turnoUsuario.atenderSiguiente()
     turnoUsuario.toFile()
