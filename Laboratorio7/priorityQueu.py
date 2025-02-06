@@ -18,8 +18,8 @@ class PriorityQueu(HEAP):
     def HEAP_EXTRACT_MAX(self):
         max = self._A[0]
         ultimo = self._A.pop()
+        self._A.pop(0)
         self._A.insert(0,ultimo)
-        self._A.pop()
         self._tamaño -= 1
         self.max_heapify(0)
         return max

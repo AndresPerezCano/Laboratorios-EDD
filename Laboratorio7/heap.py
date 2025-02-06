@@ -4,9 +4,10 @@ class HEAP:
     def __init__(self, capacidad):
         self._A = []
         self._size = capacidad
+        self._tamaño = 0
 
     def size(self):
-        return len(self._A)
+        return self._tamaño
 
     def parent(self,i):
         return int(-(-(i/2)//1) - 1)
@@ -25,7 +26,7 @@ class HEAP:
             largest = l
         #else:
             #largest = i
-        if r < self._size and self._A[r] > self._A[largest]:
+        if r < self.size() and self._A[r] > self._A[largest]:
             largest = r
         if largest != i:
             temp = self._A[i]
@@ -51,9 +52,8 @@ class HEAP:
             self._A[indice] = self._A[0]
             self._A[0] = temp
             tempL.insert(0,self._A.pop())
-            self._size -= 1
+            self._tamaño -= 1
             self.max_heapify(0)
-        self._size = heap_size
         self._A += tempL
 
         
@@ -63,6 +63,7 @@ class HEAP:
         return self._A
     
     def setA(self,A):
+        self._tamaño = len(A)
         self._A = A
 
 if __name__ == "__main__":
