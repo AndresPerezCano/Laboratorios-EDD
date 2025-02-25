@@ -67,14 +67,17 @@ class HEAP:
         self._A = A
 
 if __name__ == "__main__":
-    #print("max-heapify:\n")
+    """#print("max-heapify:\n")
     heap1 = HEAP(5)
     A1 = random.sample(range(100),5)
     heap1.setA(A1)
     #print(A1)
     heap1.max_heapify(0)
-   # print(heap1.getA())
+   # print(heap1.getA())"""
     #print("__________________________________________________________________________________________________________________________\n")
+    
+    
+    
     print("build-max-heap:\n")
     heap2 = HEAP(5)
     A2 = random.sample(range(100),5)
