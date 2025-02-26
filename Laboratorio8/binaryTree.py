@@ -1,5 +1,5 @@
 from queue import Queue
-from NodoDoble import NodoDoble
+from nodoDoble import NodoDoble
 class BinaryTree:
     
     def __init__(self):
@@ -28,13 +28,13 @@ class BinaryTree:
             return False
 
     def hasLeft(self, nodo):
-        if v.getAnterior() != None:
+        if nodo.getAnterior() != None:
             return True
         else:
             return False
 
     def hasRight(self, nodo):
-        if v.getSiguiente() != None:
+        if nodo.getSiguiente() != None:
             return True
         else:
             return False
@@ -58,10 +58,10 @@ class BinaryTree:
     def root(self):
         return self._root
 
-    def left(nodo):
+    def left(self, nodo):
         return nodo.getAnterior()
 
-    def right(nodo):
+    def right(self, nodo):
         return nodo.getSiguiente()
 
     def parent(self, nodo):
@@ -71,18 +71,19 @@ class BinaryTree:
         else:
             q = Queue()
             q.enqueue(self._root)
-            temp = self._root
-        
-        while (not(q.isEmpty()) and self.left(q.first()) != nodo and self.right(q.first() != nodo)):
+
+        while not(q.isEmpty()):
             temp = q.dequeue()
+            
+            if self.left(temp) == nodo or self.right(temp) == nodo:
+                return temp
             
             if self.hasLeft(temp):
                 q.enqueue(self.left(temp))
             
             if self.hasRight(temp):
                 q.enqueue(self.right(temp))
-            
-            return temp
+        return None
         
     def addRoot(self,dato):
         self._root = NodoDoble(dato)
