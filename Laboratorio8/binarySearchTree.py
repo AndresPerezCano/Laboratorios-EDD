@@ -8,17 +8,21 @@ class BinarySearchTree(BinaryTree):
         return self.searchTree(k,self._root)
     
     def searchTree(self,k, nodo):
-        u = nodo.getDato()
-        if k == u.getKey():
-            return nodo
+        if nodo != None:
+            u = nodo.getDato()
+            if k == u.getKey():
+                return nodo
+        
+            else:
+             
+                if k < u.getKey():
+                    return self.searchTree(k,nodo.getAnterior())
+
+                else:
+                    return self.searchTree(k,nodo.getSiguiente())
         
         else:
-            
-            if k < u.getKey():
-                return self.searchTree(k,nodo.getAnterior())
-
-            else:
-                return self.searchTree(k,nodo.getSiguiente())
+            print("No se encuentra")
 
     def insert(self, dato, key):
         o = BSTEntry(dato,key)
@@ -101,8 +105,41 @@ class BinarySearchTree(BinaryTree):
             self.inorder(T,T.right(nodo))
 
 if __name__ == "__main__":
+    #"""
+    #Primer Punto
+    ABB1 = BinarySearchTree()
+    ABB1.insert(5,5)
+    ABB1.insert(2,2)
+    ABB1.insert(1,1)
+    ABB1.insert(3,3)
+    ABB1.insert(7,7)
+    ABB1.insert(10,10)
+    ABB1.insert(9,9)
+    ABB1.insert(12,12)
+    ABB1.insert(11,11)
+    ABB1.insert(0,0)
+    ABB1.print_tree()
 
-    #2punto
+    print("__________________________________________________________________________________________________________________________")
+    #Eliminar elementos
+    ABB1.remove(12)
+    ABB1.remove(5)
+    ABB1.print_tree()
+    print("__________________________________________________________________________________________________________________________")
+    #buscar el nodo
+    print(ABB1.find(7).getDato().getDato())
+    print(ABB1.find(9).getDato().getDato())
+    print("__________________________________________________________________________________________________________________________")
+    
+    #Valor maximo y minimo
+    print("Valor con la clave más grande: ",ABB1.max(ABB1,ABB1._root))
+    print("Valor con la clave más pequeña: ",ABB1.min(ABB1,ABB1._root))
+    print("__________________________________________________________________________________________________________________________")
+    #recorrido inorder
+    ABB1.inorder(ABB1,ABB1._root)
+
+    """
+    #Segundo punto
     usuario1 = Usuario("Juan", 10101013)
     usuario2 = Usuario("Pablo", 10001011)
     usuario3 = Usuario("Maria", 10101015)
@@ -141,4 +178,4 @@ if __name__ == "__main__":
     print("__________________________________________________________________________________________________________________________")
     #recorrido inorder
     ABB.inorder(ABB,ABB._root)
-    
+    """
